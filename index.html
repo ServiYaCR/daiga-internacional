@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daiga Internacional</title>
 <meta name="description" content="Daiga Internacional — コスタリカ・サンホセを拠点とする不動産・移住コンサルティング・観光ガイドの会社サイト。">
 <style>
-  :root{ color-scheme: light dark; }
+  :root{ color-scheme: light; }
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   :root{
-    --paper: #EDEADF;
-    --paper-alt: #E3DFCF;
+    --paper: #FFFFFF;
+    --paper-alt: #F5F5F3;
     --ink: #24312C;
     --ink-soft: #55635A;
     --accent-green: #2F5C4B;
@@ -20,28 +20,6 @@
     --rule-strong: rgba(36,49,44,0.38);
   }
 
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper: #161F1B;
-      --paper-alt: #1E2A24;
-      --ink: #EAE6D8;
-      --ink-soft: #A6B0A6;
-      --accent-green: #82C0A0;
-      --accent-clay: #E08A62;
-      --rule: rgba(234,230,216,0.16);
-      --rule-strong: rgba(234,230,216,0.30);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper: #161F1B;
-    --paper-alt: #1E2A24;
-    --ink: #EAE6D8;
-    --ink-soft: #A6B0A6;
-    --accent-green: #82C0A0;
-    --accent-clay: #E08A62;
-    --rule: rgba(234,230,216,0.16);
-    --rule-strong: rgba(234,230,216,0.30);
-  }
 
   *{ box-sizing: border-box; }
   body{
@@ -172,6 +150,10 @@
   .hero h1 i{ color: var(--accent-green); font-style: italic; }
   .hero p.lede{ max-width: 64ch; color: var(--ink-soft); font-size: 16.5px; }
 
+  .hero-photos{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 36px; }
+  .hero-photos img{ display:block; width:100%; height:auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; }
+  @media (max-width: 560px){ .hero-photos{ gap: 6px; } }
+
   .route{ margin-top: 40px; display:flex; align-items:center; gap: 6px; }
   .route .node{ text-align:center; font-family:'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
   .route .dot{ width:9px; height:9px; border-radius:50%; background: var(--accent-green); margin: 0 auto 8px; }
@@ -263,7 +245,7 @@
 </style>
 </head>
 <body>
-<div id="page" data-lang="ja">
+<div id="page" data-lang="en">
 
 <header class="site">
   <div class="wrap nav-row">
@@ -283,12 +265,12 @@
         <a href="#business"><span class="lang-ja">事業</span><span class="lang-en">Business</span></a>
         <a href="#consulting"><span class="lang-ja">コンサル</span><span class="lang-en">Consulting</span></a>
         <a href="#tours"><span class="lang-ja">観光ガイド</span><span class="lang-en">Tours</span></a>
-        <a href="#blogs" class="lang-ja">ブログ</a>
+        <a href="#blogs"><span class="lang-ja">ブログ</span><span class="lang-en">Blog</span></a>
         <a href="#contact"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></a>
       </nav>
       <div class="langsw" role="group" aria-label="Language">
-        <button type="button" data-set-lang="ja" aria-pressed="true">JA</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-set-lang="ja" aria-pressed="false">JA</button>
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
       </div>
     </div>
   </div>
@@ -321,6 +303,12 @@
 
     <p class="lede lang-ja">Daiga Internacionalは、コスタリカ・サンホセを拠点とする不動産・コンサルティング事業の会社です。あわせて、日本語・英語で移住や投資をサポートするコンサルティングサービスも展開しています。代表の経歴、事業内容、発信中のブログをこのページにまとめています。</p>
     <p class="lede lang-en">Daiga Internacional is a real estate and consulting company based in San José, Costa Rica. We also offer relocation and investment consulting in both Japanese and English. This page brings together our founder's background, our businesses, and the blogs we publish.</p>
+
+    <div class="hero-photos">
+      <img src="images/hero-volcano.jpg" alt="Volcano view in Costa Rica" width="900" height="1200" loading="eager">
+      <img src="images/hero-waterfall.jpg" alt="Waterfall in the Costa Rican rainforest" width="900" height="1200" loading="eager">
+      <img src="images/hero-beach.jpg" alt="Beach view through the trees in Costa Rica" width="900" height="1200" loading="eager">
+    </div>
 
     <div class="route" aria-hidden="true">
       <div class="node"><div class="dot"></div>JAPAN</div>
@@ -518,14 +506,16 @@
     </div>
   </section>
 
-  <section id="blogs" class="wrap lang-ja">
+  <section id="blogs" class="wrap">
     <a href="https://hb.afl.rakuten.co.jp/hsc/582c53c1.61208f8c.579bdb26.aee0ed56/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyOSIsImJhbiI6MjE4ODY5MiwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/582c53c1.61208f8c.579bdb26.aee0ed56/?me_id=2100001&me_adv_id=2188692&t=pict" border="0" style="margin:2px" alt="" title=""></a>
     <div class="section-head">
-      <h2>発信しているふたつのブログ</h2>
+      <h2 class="lang-ja">発信しているブログ・サイト</h2>
+      <h2 class="lang-en">Our Blog &amp; Travel Site</h2>
     </div>
-    <p class="lead-p">コスタリカでの暮らしと、海外生活を通じて気づいたことを、それぞれのブログで発信しています。</p>
+    <p class="lead-p lang-ja">コスタリカでの暮らし、海外生活の気づき、旅行準備に役立つ情報を、それぞれのブログ・サイトで発信しています。</p>
+    <p class="lead-p lang-en">We share life abroad and practical trip-planning help through our blog and travel site.</p>
     <div class="blogs">
-      <div class="blog-card">
+      <div class="blog-card lang-ja">
         <div class="blog-name">DiceCostaRica</div>
         <div class="blog-handle">@DiceCostaRica</div>
         <p class="blog-desc">コスタリカ移住・不動産・ビザ情報を、現地在住者の視点で。</p>
@@ -542,15 +532,32 @@
       <div class="blog-card">
         <div class="blog-name">The View Elsewhere</div>
         <div class="blog-handle">@TheViewDice</div>
-        <p class="blog-desc">アメリカ留学からコスタリカ移住までの経験をもとに、海外生活の気づきを英語で発信するExpat向けブログ。</p>
+        <p class="blog-desc lang-ja">アメリカ留学からコスタリカ移住までの経験をもとに、海外生活の気づきを英語で発信するExpat向けブログ。</p>
+        <p class="blog-desc lang-en">An English blog for expats, sharing lessons from life abroad — from studying in the U.S. to moving to Costa Rica.</p>
         <div class="blog-posts">
-          <div class="lbl">主な記事</div>
+          <div class="lbl"><span class="lang-ja">主な記事</span><span class="lang-en">Featured</span></div>
           <ul>
             <li><a href="https://theviewelsewhere.substack.com/p/the-view-elsewhere-clarifying-your" target="_blank" rel="noopener">The Question I Skipped</a></li>
             <li><a href="https://theviewelsewhere.substack.com/p/the-part-of-travel-nobody-puts-in" target="_blank" rel="noopener">The Part of Travel Nobody Puts in the Itinerary</a></li>
           </ul>
         </div>
         <a class="visit" href="https://theviewelsewhere.substack.com" target="_blank" rel="noopener">theviewelsewhere.substack.com ↗</a>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-name">Before You Venture</div>
+        <p class="blog-desc lang-ja">コスタリカ・日本・パナマ・コロンビアへの旅行前に、eSIM・空港送迎・ホテル・ツアーなどを比較・予約できる英語の旅行サイト。実際に住んだ・訪れた経験をもとに紹介しています。</p>
+        <p class="blog-desc lang-en">Travel guides from someone who has been there. Compare and book eSIMs, airport transfers, hotels, tours, and more for Costa Rica, Japan, Panama, and Colombia.</p>
+        <div class="blog-posts">
+          <div class="lbl"><span class="lang-ja">国別ガイド</span><span class="lang-en">Destinations</span></div>
+          <ul>
+            <li><a href="https://beforeyouventure.com/costa-rica/" target="_blank" rel="noopener">Costa Rica</a></li>
+            <li><a href="https://beforeyouventure.com/japan/" target="_blank" rel="noopener">Japan</a></li>
+            <li><a href="https://beforeyouventure.com/panama/" target="_blank" rel="noopener">Panama</a></li>
+            <li><a href="https://beforeyouventure.com/colombia/" target="_blank" rel="noopener">Colombia</a></li>
+          </ul>
+        </div>
+        <a class="visit" href="https://beforeyouventure.com/" target="_blank" rel="noopener">beforeyouventure.com ↗</a>
       </div>
     </div>
   </section>
@@ -561,7 +568,8 @@
         <div class="contact-links">
           <a href="mailto:daisuke.babajp@gmail.com">daisuke.babajp@gmail.com</a>
           <a href="https://dicekcr.hatenablog.com" target="_blank" rel="noopener" class="lang-ja">DiceCostaRica ブログ ↗</a>
-          <a href="https://theviewelsewhere.substack.com" target="_blank" rel="noopener" class="lang-ja">The View Elsewhere ↗</a>
+          <a href="https://theviewelsewhere.substack.com" target="_blank" rel="noopener">The View Elsewhere ↗</a>
+          <a href="https://beforeyouventure.com/" target="_blank" rel="noopener">Before You Venture ↗</a>
         </div>
         <p class="contact-note lang-ja">日本語・英語どちらでもご相談いただけます。</p>
         <p class="contact-note lang-en">We're happy to assist in either Japanese or English.</p>
