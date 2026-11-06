@@ -150,9 +150,15 @@
   .hero h1 i{ color: var(--accent-green); font-style: italic; }
   .hero p.lede{ max-width: 64ch; color: var(--ink-soft); font-size: 16.5px; }
 
-  .hero-photos{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 36px; }
-  .hero-photos img{ display:block; width:100%; height:auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; }
-  @media (max-width: 560px){ .hero-photos{ gap: 6px; } }
+  /* ---- Photo + text split ---- */
+  .split{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap: 40px; align-items: center; }
+  .split.photo-left{ grid-template-columns: 280px minmax(0,1fr); }
+  .split-photo img{ display:block; width:100%; height:auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; }
+  @media (max-width: 760px){
+    .split, .split.photo-left{ grid-template-columns: 1fr; gap: 24px; }
+    .split.photo-left .split-photo{ order: 2; }
+    .split-photo img{ aspect-ratio: 4 / 3; }
+  }
 
   .route{ margin-top: 40px; display:flex; align-items:center; gap: 6px; }
   .route .node{ text-align:center; font-family:'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
@@ -296,6 +302,8 @@
       </div>
     </div>
 
+    <div class="split">
+    <div>
     <span class="eyebrow">SAN JOSÉ, COSTA RICA</span>
 
     <h1 class="lang-ja">住まいも、暮らしも、旅も。<i>コスタリカでの一歩を</i>、現地から。</h1>
@@ -304,10 +312,10 @@
     <p class="lede lang-ja">Daiga Internacionalは、コスタリカ・サンホセを拠点とする不動産・コンサルティング事業の会社です。あわせて、日本語・英語で移住や投資をサポートするコンサルティングサービスも展開しています。代表の経歴、事業内容、発信中のブログをこのページにまとめています。</p>
     <p class="lede lang-en">Daiga Internacional is a real estate and consulting company based in San José, Costa Rica. We also offer relocation and investment consulting in both Japanese and English. This page brings together our founder's background, our businesses, and the blogs we publish.</p>
 
-    <div class="hero-photos">
-      <img src="images/hero-volcano.jpg" alt="Volcano view in Costa Rica" width="900" height="1200" loading="eager">
-      <img src="images/hero-waterfall.jpg" alt="Waterfall in the Costa Rican rainforest" width="900" height="1200" loading="eager">
-      <img src="images/hero-beach.jpg" alt="Beach view through the trees in Costa Rica" width="900" height="1200" loading="eager">
+    </div>
+    <div class="split-photo">
+      <img src="images/hero-volcano.jpg" alt="Volcano view in Costa Rica" width="900" height="1200" loading="eager" style="object-position:50% 70%">
+    </div>
     </div>
 
     <div class="route" aria-hidden="true">
@@ -424,6 +432,11 @@
       <p class="note lang-ja">税制や優遇制度の詳細は個々の状況により異なります。ご相談の中で、現地の最新情報とあわせてご案内します。</p>
       <p class="note lang-en">Tax rules and incentive programs vary by individual situation. We walk through the current details together as part of your consultation.</p>
 
+      <div class="split photo-left">
+      <div class="split-photo">
+        <img src="images/hero-beach.jpg" alt="Beach view through the trees in Costa Rica" width="900" height="1200" loading="lazy" style="object-position:50% 60%">
+      </div>
+      <div>
       <div class="eyebrow sublabel"><span class="lang-ja">サービス内容</span><span class="lang-en">What We Offer</span></div>
       <ul>
         <li><span class="lang-ja">移住情報の提供（ビザ・生活基盤づくり）</span><span class="lang-en">Relocation information (visas &amp; building a life here)</span></li>
@@ -437,6 +450,8 @@
       <p class="lang-en">We offer practical consultation for retirement relocation to Costa Rica, including Pensionado-related planning, relocating with or near aging family members, and considering future housing, healthcare, and care options.</p>
       <p class="lang-ja">必要な準備や確認事項を整理し、法律・税務・医療など専門的な判断が必要な場合は、内容に応じて現地の専門家と連携します。</p>
       <p class="lang-en">We help organize the questions and preparations involved and, when legal, tax, medical, or other professional expertise is required, coordinate with appropriate local professionals.</p>
+      </div>
+      </div>
 
       <table class="price-table">
         <thead>
@@ -494,6 +509,8 @@
         <h3><span class="lang-ja">観光ガイドサービス</span><span class="lang-en">Private Guiding</span></h3>
         <span class="tag">Costa Rica · Custom Tours</span>
       </div>
+      <div class="split">
+      <div>
       <p class="lang-ja">決まったコースはありません。まずはご要望をお伺いし、行き先から日程まで一からプランを作成するオーダーメイド型のガイドサービスです。移住・投資をご検討中の方の下見旅行にもご利用いただけます。</p>
       <p class="lang-en">There's no fixed itinerary. We start by hearing what you're looking for, then build your route and schedule from scratch as a fully custom guiding service — also a great fit for a scouting trip if you're considering relocating to or investing in Costa Rica.</p>
       <ul>
@@ -503,6 +520,11 @@
       </ul>
       <p class="note lang-ja">料金：内容に応じて個別お見積り（要相談）</p>
       <p class="note lang-en">Fee: custom quote based on your plan — contact us</p>
+      </div>
+      <div class="split-photo">
+        <img src="images/hero-waterfall.jpg" alt="Waterfall in the Costa Rican rainforest" width="900" height="1200" loading="lazy">
+      </div>
+      </div>
     </div>
   </section>
 
