@@ -248,6 +248,25 @@
   .foot-mark img{ width: 88px; height: auto; border-radius: 6px; }
   .foot-note{ font-family:'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); max-width: 34ch; text-align: right; }
   @media (max-width: 640px){ .foot-mark{ align-items:flex-start; } .foot-note{ text-align:left; } }
+
+  /* ---- Side gutters & mobile price table ---- */
+  .wrap.hero, .wrap.nav-row{ padding-left: 28px; padding-right: 28px; }
+  @media (max-width: 560px){
+    .wrap, .wrap.hero, .wrap.nav-row{ padding-left: 20px; padding-right: 20px; }
+    .nav-row{ gap: 10px; }
+    .brand, .brand-text{ min-width: 0; }
+    .stamp{ width: 80px; height: 80px; }
+    .stamp-inner{ width: 64px; height: 64px; }
+  }
+  @media (max-width: 600px){
+    .price-table thead{ display: none; }
+    .price-table tr{ display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .price-table tr:last-child{ border-bottom: none; }
+    .price-table td{ padding: 0; border-bottom: none; }
+    .price-table td.name{ grid-column: 1; grid-row: 1; }
+    .price-table td.amt{ grid-column: 2; grid-row: 1; padding-left: 0; }
+    .price-table td.desc{ grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
+  }
 </style>
 </head>
 <body>
